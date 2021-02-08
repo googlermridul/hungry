@@ -5,11 +5,11 @@ const searchButton = document.getElementById('searchBtn');
 searchButton.addEventListener('click', (event) => {
    event.preventDefault();
    const inputField = document.getElementById('inputField').value;
-   getUserData(inputField);
+   inputValue(inputField);
 });
 
 // input field code here
-function getUserData(inputField) {
+function inputValue(inputField) {
    result.style.display = "none";
    const meal = document.getElementById('meal');
    let url = "";
@@ -55,7 +55,7 @@ const displayData = data => {
       const div = document.createElement('div');
       text = `
         <div class="error">
-            <h3>Opps! this meal is not available right now.</h3>
+            <h3>eisob amader restaurent e nai!</h3>
         </div>`;
       div.innerHTML = text;
       meal.appendChild(div);
@@ -71,27 +71,27 @@ const showMealDetails = (string) => {
          result.style.display = "block"
          const div = document.createElement('div');
          let mealInfo;
-         data.meals.forEach(eachItem => {
-         if (string === eachItem.strMeal) {
+         data.meals.forEach(perItem => {
+         if (string === perItem.strMeal) {
             mealInfo = `
                <div>
-                  <img src="${eachItem.strMealThumb}" class="img-fluid rounded">
+                  <img src="${perItem.strMealThumb}" class="img-fluid rounded">
                   <div class="item-details">
                      <div class="my-3">
-                        <h3>${eachItem.strMeal}</h3>
+                        <h3>${perItem.strMeal}</h3>
                         <b>Ingredients</b>
                      </div>
                      <ul>
-                        <li>${eachItem.strIngredient1}</li>
-                        <li>${eachItem.strIngredient2}</li>
-                        <li>${eachItem.strIngredient3}</li>
-                        <li>${eachItem.strIngredient4}</li>
-                        <li>${eachItem.strIngredient5}</li>
-                        <li>${eachItem.strIngredient6}</li>
-                        <li>${eachItem.strIngredient7}</li>
-                        <li>${eachItem.strIngredient8}</li>
-                        <li>${eachItem.strIngredient9}</li>
-                        <li>${eachItem.strIngredient10}</li>
+                        <li>${perItem.strIngredient1}</li>
+                        <li>${perItem.strIngredient2}</li>
+                        <li>${perItem.strIngredient3}</li>
+                        <li>${perItem.strIngredient4}</li>
+                        <li>${perItem.strIngredient5}</li>
+                        <li>${perItem.strIngredient6}</li>
+                        <li>${perItem.strIngredient7}</li>
+                        <li>${perItem.strIngredient8}</li>
+                        <li>${perItem.strIngredient9}</li>
+                        <li>${perItem.strIngredient10}</li>
                      </ul>
                   </div>
                </div>`;

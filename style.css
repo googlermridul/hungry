@@ -76,7 +76,6 @@ b {
 .meal-box {
    border: none;
    background: #ffeee8;
-   margin: 15px 0;
    border-radius: 5px;
 }
 .meal-box h5 {
@@ -93,10 +92,19 @@ b {
     grid-gap: 15px;
     position: relative;
 }
+#mealDetails {
+   margin: 0 15px;
+}
 
 .error {
    position: absolute;
    display: block;
    width: 100%;
    text-align: center;
+}
+
+@media (max-width: 768px) {
+   #meal{
+       grid-template-columns: repeat(2, 2fr) !important;
+   }
 }
